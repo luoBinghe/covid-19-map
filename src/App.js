@@ -1,10 +1,14 @@
 import './App.css';
+import GlobalStyle from './commons/styles/GlobalStyle'
+import { StylesProvider } from '@material-ui/styles'
+import { CssBaseline } from '@material-ui/core'
 
 function App() {
   return (
-    <div className="App">
-      initial
-    </div>
+    <StylesProvider injectFirst>
+      <CssBaseline />
+      <GlobalStyle />
+    </StylesProvider>
   );
 }
 
