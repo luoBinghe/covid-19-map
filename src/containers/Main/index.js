@@ -1,33 +1,30 @@
 import React, { useEffect, useState } from 'react'
+import { ContainerStyled } from './style'
+import Board from './components/Board'
 import axios from 'axios' 
 
 function Main(){
   const path = `https://coronavirus-19-api.herokuapp.com/countries`
+  const [data, setData] = useState({})
   const [country, setCountry] = useState('brazil')
 
   async function request(){
     try{
       const response = await axios.get(`${path}/${country}`)
-      console.log('response', response)
+      setData(response.data)
     }catch(e){
       console.log(e)
     }
   }
-
-  useEffect(() => {
-    setCountry(country)
-  }, [country])
+  request()
 
   return(
-    <div>
-      <select>
-        <option country='brazil'>Brasil</option>
-        <option country="italy">Italy</option>
-      </select>
-      <button onClick={request}>
-        pesquisar
-      </button>
-    </div>
+    <ContainerStyled>
+      <div className="mb-2">
+          
+      </div>
+      <Board data={data}></Board>
+    </ContainerStyled>
   )
 }
 
