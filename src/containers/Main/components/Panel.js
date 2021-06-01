@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, Typography, Button, Select, MenuItem } from '../../../components/index'
 // import RefreshIcon from '@material-ui/icons/Refresh'
 import countries from '../../../commons/constants/countries'
-import { ItemStyled, CardContentStyled } from './style'
+import { ItemStyled, CardPanelContentStyled } from './style'
 
 function Panel({ updateAt, onChange, data, country, getCovidData }){
   const {
@@ -29,7 +29,7 @@ function Panel({ updateAt, onChange, data, country, getCovidData }){
 
   return(
     <Card>
-      <CardContentStyled>
+      <CardPanelContentStyled>
         <div>
           <Typography variant="h5" component="span" color="primary" >
             COVID19
@@ -46,7 +46,7 @@ function Panel({ updateAt, onChange, data, country, getCovidData }){
             </Select>
           </div>
         </div>
-      </CardContentStyled>
+      </CardPanelContentStyled>
     </Card>
   )
 }
