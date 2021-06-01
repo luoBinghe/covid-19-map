@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Card as CardUI } from '../../../components/index'
 import {
   LabelStyled,
@@ -10,7 +9,7 @@ import {
 function Card({ value, label, color }){
   return(
     <CardUI>
-      <CardContentStyled color={color}>
+      <CardContentStyled color={color}> 
         <ValueStyled>
           {value}
         </ValueStyled>

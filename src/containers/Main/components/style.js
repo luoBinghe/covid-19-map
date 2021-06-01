@@ -13,8 +13,8 @@ export const ValueStyled = styled(Typography)`
 `;
 
 export const CardContentStyled = styled(CardContent)`
-  fdisplay: flex;
-  justify-content: space-space-between;
+  display: flex;
+  justify-content: space-between;
   padding: 25px;
 `;
 
