@@ -1,28 +1,19 @@
 import React from 'react'
 import { Card, Typography, Button, Select, MenuItem } from '../../../components/index'
-// import RefreshIcon from '@material-ui/icons/Refresh'
 import countries from '../../../commons/constants/countries'
 import { ItemStyled, CardPanelContentStyled } from './style'
 
-function Panel({ updateAt, onChange, data, country, getCovidData }){
+function Panel({ updateAt, onChange, data, country }){
   const {
-    active,
-    cases,
-    casesPerOneMillion,
-    critical,
     deaths,
     recovered,
-    todayCases,
-    todayDeaths,
-    totalTests,
   } = data
   const navigatorHasShare = navigator.share
-  const textCovid19 = `País: ${country} - recuperados: ${recovered}`
+  const textCovid19 = `País: ${country} - recuperados: ${recovered} - mortes: ${deaths}`
 
   const copyInfo = () => {
     navigator.clipboard.writeText(textCovid19)
   }
-
 
   // não tenho url pra ser compartilhada :c
   const shareInfo = () => {

@@ -35,7 +35,6 @@ function Main(){
           updateAt={updateAt}
           onChange={handleChange}
           country={country}
-          //getCovidData={getCovidData}
         />
       </div>
       <Board data={data}></Board>
