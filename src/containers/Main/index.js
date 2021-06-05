@@ -5,12 +5,12 @@ import Panel from './components/Panel'
 import axios from 'axios' 
 
 function Main(){
-  const path = `https://coronavirus-19-api.herokuapp.com/countries`
   const [data, setData] = useState({})
   const [country, setCountry] = useState('brazil')
   const updateAt = new Date().toLocaleString()
 
   useEffect(() => {
+    const path = `https://coronavirus-19-api.herokuapp.com/countries`
     async function request(){
       try{
         const response = await axios.get(`${path}/${country}`)
@@ -20,7 +20,7 @@ function Main(){
       }
     }
     request()
-  }, [country, data])
+  }, [country])
 
   const handleChange = ({ target }) => {
     const country = target.value
